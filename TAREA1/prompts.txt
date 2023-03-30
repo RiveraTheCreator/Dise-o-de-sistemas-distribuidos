@@ -1,0 +1,30 @@
+Desarrolla un sistema en java con las siguientes especificaciones
+1: Desarrolla un servidor TCP multithread ,llamado 'ServerA', el cual recibira tres numeros de 64 bits,(llamados: NUMERO, numeroInicial, numeroFinal).
+El ServerA debera dividir el NUMERO entre cada `n` numero desde numeroInicial hasta numeroFinal, si hay un numero `n` que divide a NUMERO, entonces el 'ServerA' retornara al cliente la palabra "Divide" de otra manera regresara al cliente "No Divide".
+Usa el operador modulo '%' para determinar que si un numero n divide a NUMERO.
+
+2: Ahora Desarrolla un cliente Tcp que reciba como parametro un numero entero de 64 bits y lo envie a un servidor llamado 'ServerB', entonces el cliente debera recibir del 'Server B' un string; El cliente desplegara la string que recibio del 'ServerB'
+
+
+3: Desarrolla un servidor TCP, llamado 'ServerB' el cual brindara el servicio de determinar si un numero entero mayor que 1 es primo o no.
+
+En base a los programas anteriores de cliente, el 'ServerB' recibira las peticiones del cliente, recibira un numero entero de 64 bits.Para determinar si NUMERO es primo,  el 'ServerB' dividira el intervalo [ 2, NUMERO - 1] en tres intervalos, entonces el 'ServidorB' se conectara a tres instancias del 'ServidorA'.El 'ServidorB' enviara a cada instancia del 'ServidorA', NUMERO y el intervalo [numeroInicial, numeroFinal] correspondiente.
+Cada instancia se mostra en pantalla
+
+Si las tres instancias del servidor A retornan 'No divide' al 'ServerB' entonces el 'ServerB' regresara al cliente las palabras 'ES PRIMO'.Si alguna instancia del 'ServerA' retorna 'Divide' entonces el 'ServerB' regresara al cliente las palabras 'No es primo'.
+
+Se sugiere utilizar las siguientes formulas para obrener los tres intervalos:
+
+Sea K= NUMERO / 3  entonces se tiene la tabla:
+Intervalo   numeroInicial   numeroFinal
+1			3					K
+2			K+1					2*K
+3			2*K+1				NUMERO - 1 	
+
+
+
+
+
+haz una pequeña semblansa sobre los temas que abarca este programa como TCP, sockets multithread en un parrafo escrito
+
+
